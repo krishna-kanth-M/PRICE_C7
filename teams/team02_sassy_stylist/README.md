@@ -63,7 +63,7 @@ Our project strictly separates concerns across three decoupled layers:
 ### Layer 1: Data and Math Core Engine (`stylist_engine.py`)
 - **Data Repository**: `data/catalog_50.json` featuring 50 authentic boutique items across 6 categories (Dresses, Tops, Outerwear, Bottoms, Footwear, Accessories).
 - **Mathematical Similarity Scoring**:
-  $$	ext{Score}(Q, I) = \min\left(1.0, rac{5 \cdot |Q \cap 	ext{Tags}| + 3 \cdot \mathbb{I}(Q \cap 	ext{Name}) + 2 \cdot \mathbb{I}(Q \cap 	ext{Cat}) + 1 \cdot \mathbb{I}(Q \cap 	ext{Desc})}{\max(10 \cdot |Q|, 10)}ight)$$
+  $$\text{Score}(Q, I) = \min\left(1.0, \frac{5 \cdot |Q \cap \text{Tags}| + 3 \cdot \mathbb{I}(Q \cap \text{Name}) + 2 \cdot \mathbb{I}(Q \cap \text{Cat}) + 1 \cdot \mathbb{I}(Q \cap \text{Desc})}{\max(10 \cdot |Q|, 10)}\right)$$
 - **Financial Analytics**: `calculate_outfit_budget_breakdown` calculates cumulative investment, average price per piece, category frequency, and price ranges.
 - **Dual Engine Execution**: Google Gemini 1.5 Flash API with graceful fallback to a deterministic offline engine for zero-cost test execution.
 

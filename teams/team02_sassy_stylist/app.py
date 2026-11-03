@@ -19,7 +19,6 @@ from stylist_engine import (
 
 st.set_page_config(
     page_title="The Sassy Stylist Bot | Retail AI",
-    page_icon="👗",
     layout="wide"
 )
 
@@ -50,7 +49,7 @@ catalog = load_catalog(str(catalog_path))
 df_catalog = pd.DataFrame(catalog)
 
 # Sidebar Configuration
-st.sidebar.title("✨ Sassy Stylist Studio")
+st.sidebar.title("Sassy Stylist Studio")
 st.sidebar.caption("Team 2: Grounded Conversational Fashion Engine")
 
 # Catalog Key Metrics in Sidebar
@@ -67,7 +66,7 @@ api_key_input = st.sidebar.text_input(
 )
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("🌟 Quick Occasion Prompts")
+st.sidebar.subheader("Quick Occasion Prompts")
 quick_prompts = [
     "What to wear to a beach wedding in Amalfi?",
     "Evening formal cocktail party in Manhattan",
@@ -80,17 +79,17 @@ for qp in quick_prompts:
         st.session_state["pending_prompt"] = qp
 
 # Main Header
-st.title("👗 The Sassy Stylist Bot")
-st.caption("AI-powered styling with unapologetic attitude — 100% grounded in our boutique catalog without hallucination.")
+st.title("The Sassy Stylist Bot")
+st.caption("AI-powered styling with unapologetic attitude - 100% grounded in our boutique catalog without hallucination.")
 
 # Navigation Tabs
-tab_chat, tab_analytics, tab_guide = st.tabs(["💬 Stylist Chat", "📊 Catalog & Style Analytics", "ℹ️ Grounding Guide"])
+tab_chat, tab_analytics, tab_guide = st.tabs(["Stylist Chat", "Catalog and Style Analytics", "Grounding Guide"])
 
 with tab_guide:
-    st.info("💡 **Grounded Styling Guarantee**: Every single piece recommended is verified against our local 50-item catalog. No phantom items, no broken links, zero hallucinations.")
-    with st.expander("Explore Team 2 Architecture & Methodology"):
+    st.info("Grounded Styling Guarantee: Every single piece recommended is verified against our local 50-item catalog. No phantom items, no broken links, zero hallucinations.")
+    with st.expander("Explore Team 2 Architecture and Methodology"):
         st.markdown("""
-        - **Layer 1: Data & Math Core Engine**: Implements normalized Jaccard-based vibe similarity and outfit financial aggregation.
+        - **Layer 1: Data and Math Core Engine**: Implements normalized Jaccard-based vibe similarity and outfit financial aggregation.
         - **Layer 2: Automated Pytest Verification**: 100% test suite pass rate verifying grounding, schemas, and arithmetic correctness.
         - **Layer 3: Interactive UI**: Built with Streamlit chat widgets and Plotly analytics dashboards.
         """)
@@ -156,7 +155,7 @@ with tab_chat:
                         st.markdown(f"`${item['Price']:.2f}` | *{item['Category']}*")
                         tags_str = " ".join([f"`#{t}`" for t in item.get("Vibe_Tags", [])[:2]])
                         st.markdown(tags_str)
-                        st.button(f"Add to Bag", key=f"btn_{msg['content'][:8]}_{i}")
+                        st.button("Add to Bag", key=f"btn_{msg['content'][:8]}_{i}")
 
                 # Plotly outfit price comparison
                 outfit_metrics = calculate_outfit_budget_breakdown(recs)
